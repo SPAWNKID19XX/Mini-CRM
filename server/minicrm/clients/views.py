@@ -1,4 +1,10 @@
 from django.shortcuts import render, HttpResponse
+from .models import Clients
 
-def health_ok(request):
-    return HttpResponse('OK')
+def get_list(request):
+    customers = Clients.objects.all()
+    context = {
+        'title':'Clients',
+        'clients': customers
+    }
+    return render(request, 'clients.html', context)

@@ -16,8 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import HttpResponse
+
+def health_ok(request):
+    return HttpResponse('OK')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('health/', include('clients.urls'))
+    path('clients/', include('clients.urls')),
+    path('health/', health_ok, name='health_ok')
+
 ]
+

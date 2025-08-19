@@ -86,10 +86,10 @@ mini_crm/
   - [X] Create project `mini_crm` and app `clients`
   - [X] Add `/health/` → returns `ok`
 
-- [ ] **1) Client model**
-  - [ ] Fields: `name (required)`, `email (unique, lowercased)`, `phone (optional)`, `created_at (auto_now_add)`
-  - [ ] Admin: `list_display(name, email, created_at)`, search by `name, email`
-  - [ ] **Check:** created via admin; list sorted by date
+- [x] **1) Client model**
+  - [x] Fields: `name (required)`, `email (unique, lowercased)`, `phone (optional)`, `created_at (auto_now_add)`
+  - [x] Admin: `list_display(name, email, created_at)`, search by `name, email`
+  - [x] **Check:** created via admin; list sorted by date
 
 - [ ] **2) Client CRUD (FBV)**
   - [ ] URLs: `/clients/`, `/clients/add/`, `/clients/<id>/edit/`, `/clients/<id>/delete/`
