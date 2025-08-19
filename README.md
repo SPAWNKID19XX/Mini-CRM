@@ -82,9 +82,9 @@ mini_crm/
 
 ### Stage 1 — Junior (Basics)
 
-- [ ] **0) Start**
-  - [ ] Create project `mini_crm` and app `clients`
-  - [ ] Add `/health/` → returns `ok`
+- [X] **0) Start**
+  - [X] Create project `mini_crm` and app `clients`
+  - [X] Add `/health/` → returns `ok`
 
 - [ ] **1) Client model**
   - [ ] Fields: `name (required)`, `email (unique, lowercased)`, `phone (optional)`, `created_at (auto_now_add)`
