@@ -2,11 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <style>
+    .form-errors,
+    .errorlist { color: red; margin: 0 0 12px; padding: 0; }
+    .errorlist li { margin-left: 0; list-style: none; }
+  </style>
   <title>{{ title }}</title>
 </head>
 <body>
   <h1>{{ title }}</h1>
   <form method="post" action="">
+    <!-- Ensure CSRF token is included for security -->
+    {% if success_msg %}
+      <p style="color: green; ">{{ success_msg }}</p>
+    {% endif %}
+    {% if error_msg %}
+      <p style="color: red; ">--------------{{ form.error }}</p>
+    {% endif %}
+    <!-- Render the form fields -->
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Add Customer</button>
