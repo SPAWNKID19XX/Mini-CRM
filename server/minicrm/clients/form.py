@@ -1,20 +1,28 @@
 from django import forms
 from .models import Clients
 
-class NewCustomerForm(forms.Form):
-    name = forms.CharField(
-        required=True
-    )
-    email = forms.EmailField()
-    phone = forms.CharField()
+class NewCustomerForm(forms.ModelForm):
+
+    class Meta:
+        model = Clients
+        fields = ['name', 'email', 'phone']
 
     def clean(self):
         cleaned_form = super().clean()
 
-        name = cleaned_form.get('name')
         email = cleaned_form.get('email')
-        phone = cleaned_form.get('phone')
 
-        if email and Clients.objects.filter(email=email).exists():
-            raise forms.ValidationError(f"Email {email} already exists in the database.")  
+        if not email:
+            return email
+        
+        cleaned_email = email.strip().lower()
+
+        rec = Clients.objects.filter(email=cleaned_email)
+
+        if self.instance and self.instance.pk:
+            rec = rec.exclude(pk=self.instance.pk)
+
+        if rec.exists():
+            raise forms.ValidationError(f"Email {email} already exists in the database.")   
+         
         return cleaned_form

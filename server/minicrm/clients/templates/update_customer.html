@@ -11,6 +11,7 @@
 </head>
 <body>
   <h1>{{ title }}</h1>
+  <a href="{% url 'delete_customer'  customer.id %}">Delete customer {{customer.email}}</a>
   <form method="post">
     <!-- Ensure CSRF token is included for security -->
     {% if success_msg %}
@@ -24,7 +25,5 @@
     {{ form.as_p }}
     <button type="submit">{{form_button}}</button>
   </form>
-
-
 </body>
 </html>
