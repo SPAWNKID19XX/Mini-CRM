@@ -10,6 +10,16 @@
 </head>
 <body>
 
+{% if messages %}
+  {% for message in messages %}
+    {% if message.tags == "success" %}
+      <div class="alert alert-success">{{ message }}</div>
+    {% elif message.tags == "error" %}
+      <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 
 <table class="table">
   <thead>

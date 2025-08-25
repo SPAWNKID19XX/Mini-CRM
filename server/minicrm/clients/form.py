@@ -17,6 +17,9 @@ class NewCustomerForm(forms.ModelForm):
         
         cleaned_email = email.strip().lower()
 
+        if cleaned_email[0] == '@' or cleaned_email == '@example.com':
+            raise forms.ValidationError("Please insert a valid email address.")
+
         rec = Clients.objects.filter(email=cleaned_email)
 
         if self.instance and self.instance.pk:

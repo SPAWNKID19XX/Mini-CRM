@@ -91,16 +91,16 @@ mini_crm/
   - [x] Admin: `list_display(name, email, created_at)`, search by `name, email`
   - [x] **Check:** created via admin; list sorted by date
 
-- [ ] **2) Client CRUD (FBV)**
+- [x] **2) Client CRUD (FBV)**
   - [x] URLs: `/clients/`, `/clients/add/`, `/clients/<id>/edit/`, `/clients/<id>/edit/delete/`
   - [x] Templates in `templates/clients/`
-  - [ ] Use `messages` for success on save/delete
-  - [ ] **Check:** redirect to list after create; flash message visible
+  - [x] Use `messages` for success on save/delete
+  - [x] **Check:** redirect to list after create; flash message visible
 
-- [ ] **3) Forms & validation**
-  - [ ] `ClientForm (ModelForm)` with `clean_email`: lowercase + forbid `example.com`
-  - [ ] Render field & form errors in templates
-  - [ ] **Check:** `USER@MAIL.COM` → `user@mail.com`; `@example.com` → validation error
+- [x] **3) Forms & validation**
+  - [x] `ClientForm (ModelForm)` with `clean_email`: lowercase + forbid `example.com`
+  - [x] Render field & form errors in templates
+  - [x] **Check:** `USER@MAIL.COM` → `user@mail.com`; `@example.com` → validation error
 
 - [ ] **4) Search & pagination**
   - [ ] `/clients/?q=...` filters by `name OR email__icontains`
