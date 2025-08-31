@@ -92,7 +92,7 @@ mini_crm/
   - [x] **Check:** created via admin; list sorted by date
 
 - [x] **2) Client CRUD (FBV)**
-  - [x] URLs: `/clients/`, `/clients/add/`, `/clients/<id>/edit/`, `/clients/<id>/edit/delete/`
+  - [x] URLs: `/clients/`, `/clients/add/`, `/clients/<id>/edit/`, `/clients/<id>/delete/`
   - [x] Templates in `templates/clients/`
   - [x] Use `messages` for success on save/delete
   - [x] **Check:** redirect to list after create; flash message visible
