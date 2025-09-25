@@ -25,7 +25,8 @@ def health_ok(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clients/', include('clients.urls')),
-    path('health/', health_ok, name='health_ok')
+    path('health/', health_ok, name='health_ok'),
+    path('users/', include('users.urls'))
 
 ]
 
